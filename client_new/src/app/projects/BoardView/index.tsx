@@ -1,5 +1,4 @@
 import {
-  Priority,
   useGetTasksQuery,
   useUpdateTaskStatusMutation,
 } from "@/state/api";

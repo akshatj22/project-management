@@ -1,0 +1,51 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.0",
+    "@mui/x-data-grid": "^7.23.6",
+    "@reduxjs/toolkit": "^2.5.0",
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "gantt-task-react": "^0.3.9",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.471.1",
+    "next": "15.1.4",
+    "numeral": "^2.0.6",
+    "react": "^19.0.0",
+    "react-dedux": "^0.4.0-beta.4",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "recharts": "^2.15.0",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/lodash": "^4.17.14",
+    "@types/node": "^20.17.12",
+    "@types/numeral": "^2.0.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.4",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

@@ -13,7 +13,7 @@ type Props ={
   params: Promise<{ id: string }>;
 };
 
-const  Project = async ({ params }: {params: Promise<{ id: string }>}) => {
+const  Project = ({ params }: {params: Promise<{ id: string }>}) => {
   const { id } =  use(params);
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);

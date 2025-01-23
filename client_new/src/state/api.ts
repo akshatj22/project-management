@@ -78,7 +78,7 @@ export interface Team {
 }
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_URL : "http://localhost:8000" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_BASE_URL : "http://localhost:8000" }),
   reducerPath: "api",
   tagTypes: ["Projects", "Tasks", "Users", "Teams"],
   endpoints: (build) => ({

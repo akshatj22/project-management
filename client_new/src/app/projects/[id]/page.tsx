@@ -7,21 +7,12 @@ import List from "../ListView";
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
-import { GetServerSideProps } from 'next';
-
-type Props = {
-  params: { id: string };
+type AsyncProps = {
+  params: Promise<{ id: string }>;
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.params || {};
-  return {
-    props: { params: { id } },
-  };
-};
-
-const Project = ({ params }: Props) => {
-  const { id } = params;
+const Project = async ({ params }: AsyncProps) => {
+  const { id } = await params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
   return (

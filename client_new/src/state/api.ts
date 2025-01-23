@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import dotenv from "dotenv";
 
+
+
+dotenv.config();
 export interface Project {
   id: number;
   name: string;
@@ -74,7 +78,7 @@ export interface Team {
 }
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "NEXT_API_PUBLIC_BASE_URL" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_API_PUBLIC_BASE_URL || "http://localhost:8000" }),
   reducerPath: "api",
   tagTypes: ["Projects", "Tasks", "Users", "Teams"],
   endpoints: (build) => ({

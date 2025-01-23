@@ -3,16 +3,21 @@ import React, { useState } from "react";
 import ProjectHeader from "@/app/projects/ProjectHeader";
 import Board from "../BoardView";
 import List from "../ListView";
+import { Params } from "next/dist/server/request/params";
 // import Table from "../"
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
 type Props = {
-  params:{ id: string };
+  params:Params;
 };
 
 const Project =  ({ params }: Props) => {
-  const { id } =  params;
+  let { id } = params || { id: "" };
+  id = id || "";
+  if (Array.isArray(id)) {
+    id = id.join(",");
+  }
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
   return (

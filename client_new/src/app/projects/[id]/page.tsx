@@ -1,18 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import { ParsedUrlQuery } from "querystring";
+import {use} from "react"
 import ProjectHeader from "@/app/projects/ProjectHeader";
 import Board from "../BoardView";
 import List from "../ListView";
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
-interface Props {
-  params: { id: string };
-}
 
-const Project = ({ params }: Props) => {
-  const { id } = params;
+
+type Props ={
+  params: Promise<{ id: string }>;
+};
+
+const  Project = async ({ params }: {params: Promise<{ id: string }>}) => {
+  const { id } =  use(params);
 
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);

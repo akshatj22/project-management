@@ -3,7 +3,7 @@ import { useAppSelector } from "@/app/redux";
 import Header from "@/components/Header";
 import ModalNewTask from "@/components/ModalNewTask";
 import TaskCard from "@/components/TaskCard";
-import { Priority, Task, useGetTasksByUserQuery } from "@/state/api";
+import { Priority, Task, useGetAuthUserQuery, useGetTasksByUserQuery } from "@/state/api";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
 // import { Task } from 'gantt-task-react';
 import React, { useState } from "react";
@@ -65,11 +65,12 @@ const columns: GridColDef[] = [
       renderCell: (params) => params.value.username || "Unassigned",
     },
   ];
-  
+
 const ReusablePriorityPage = ({ priority }: Props) => {
   const [view, setView] = useState("list");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
-  const userId = 1;
+  const {data: currentUser} = useGetAuthUserQuery({}); 
+  const userId = currentUser?.userDetails?.userId ?? null;
   const {
     data: tasks,
     isLoading,

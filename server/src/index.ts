@@ -1,4 +1,4 @@
-import express from 'express';
+import express,{Request,Response} from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
@@ -36,7 +36,9 @@ app.use("/tasks", taskRoutes);
 app.use("/search", searchRoutes);
 app.use("/users", userRoutes);
 app.use("/teams", teamRoutes);
+// app.post("/create-user", async (req:Request, res:Response) => {
 
+// })
 // Server
 const PORT = Number(process.env.PORT) || 5000;
 app.listen(PORT,"0.0.0.0" ,() => {

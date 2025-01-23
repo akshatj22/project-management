@@ -7,8 +7,17 @@ import List from "../ListView";
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
+import { GetServerSideProps } from 'next';
+
 type Props = {
   params: { id: string };
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.params || {};
+  return {
+    props: { params: { id } },
+  };
 };
 
 const Project = ({ params }: Props) => {

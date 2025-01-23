@@ -7,15 +7,14 @@ import List from "../ListView";
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
+import { GetServerSideProps } from "next";
 
-type Props = {
-  params: ParsedUrlQuery;
+type Props = GetServerSideProps & {
+  params: { id: string };
 };
 
 const Project = ({ params }: Props) => {
-  const id = Array.isArray(params.id) 
-    ? params.id.join(",") 
-    : (params.id as string) || "";
+  const { id } = params;
 
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);

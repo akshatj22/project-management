@@ -7,12 +7,12 @@ import List from "../ListView";
 import Table from "../TableView";
 import Timeline from "../TimelineView";
 import ModalNewTask from "@/components/ModalNewTask";
-type AsyncProps = {
+type Props = {
   params:{ id: string };
 };
 
-const Project =  ({ params }: AsyncProps) => {
-  const { id } = params;
+const Project =  ({ params }: Props) => {
+  const { id } =  params;
   const [activeTab, setActiveTab] = useState("Board");
   const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
   return (

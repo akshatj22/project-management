@@ -1,3 +1,4 @@
+
 import Modal from "@/components/Modal";
 import {
   Priority,
@@ -27,7 +28,7 @@ const ModalNewTask = ({ isOpen, onClose,id=null }: Props) => {
   const [assignedUserId, setAssignedUserId] = useState("");
   const [projectId, setProjectId] = useState("");
 
-  const handleSubmit = async () => {
+  const handleSubmit =  () => {
     if (!title || !authorUserId || !(id !== null || projectId)) return;
 
     const formattedStartDate = formatISO(new Date(startDate), {
@@ -37,7 +38,7 @@ const ModalNewTask = ({ isOpen, onClose,id=null }: Props) => {
       representation: "complete",
     });
 
-    await createTask({
+     createTask({
       title,
       description,
       status,

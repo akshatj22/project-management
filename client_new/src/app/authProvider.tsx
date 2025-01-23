@@ -6,8 +6,8 @@ import "@aws-amplify/ui-react/styles.css";
 Amplify.configure({
   Auth: {
     Cognito: {
-      userPoolId: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_USER_POOL_ID || "" : "",
-      userPoolClientId: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID || "" : "",
+      userPoolId: "us-east-1_hDbhKkh8N",
+      userPoolClientId: "7b7n4tm24o54jb0bg7hg587pnb",
     },
   },
 });
